@@ -1,5 +1,5 @@
-## Extension Carrousel pour le thème 5W5 pour WordPress
-### Auteur : Noémie da Silva, Victor Desjardins, Vincent Gélinas, Vincent Hum, Dac Anne Nguyen
+## Extension pour WordPress : un carrousel pour le thème 5W5-E2 
+### Auteurs : Noémie da Silva, Victor Desjardins, Vincent Gélinas, Vincent Hum, Dac Anne Nguyen
 ### Titre du projet : Refonte du site web TIM Maisonneuve
 ### Professeur : Eddy Martin & Jonathan Martel, TIM, Collège de Maisonneuve, 2023
 
