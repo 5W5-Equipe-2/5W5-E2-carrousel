@@ -3,7 +3,7 @@
 /*
   * Plugin name: Carrousel 5W5
   * Description: Cette extension carrousel permet d'afficher dans une boîte modale animée les images d'une galerie
-  * Version: 1.0
+  * Version: 1.2
   * Author: Noémie da Silva, Victor Desjardins, Vincent Gélinas, Vincent Hum, Dac Anne Nguyen
   * Author URI: https://github.com/5W5-Equipe-2
   */
@@ -71,7 +71,7 @@
 <?php
         // Enqueue JavaScript et CSS
         wp_enqueue_script('carrousel-js', plugins_url('js/carrousel.js', __FILE__), array('jquery'), '1.0', true);
-        wp_enqueue_style('carrousel-css', plugins_url('sass/style.scss', __FILE__));
+        wp_enqueue_style('carrousel-css', plugins_url('style.css', __FILE__));
         return ob_get_clean();
     }
 
