@@ -8,18 +8,22 @@
   * Author URI: https://github.com/5W5-Equipe-2
   */
 
-  class MonCarrouselPlugin {
-    public function __construct() {
+class MonCarrouselPlugin
+{
+    public function __construct()
+    {
         add_shortcode('5w5e2carrousel', array($this, 'mon_carrousel_shortcode'));
     }
 
-    public function mon_carrousel_shortcode($atts) {
-        // Récupérez les attributs du shortcode
+    public function mon_carrousel_shortcode($atts)
+    {
+        // Récupérez les attributs du shortcode, y compris l'attribut max_posts
         $atts = shortcode_atts(array(
             'categories' => '', // Attribut pour les catégories, vide par défaut
             'exclude_categories' => '', // Attribut pour les catégories en négatif, vide par défaut
             'operator' => 'ET', // Opérateur par défaut (ET)
             'exclude_operator' => 'ET', // Opérateur par défaut pour les catégories en négatif (ET)
+            'max_posts' => -1, // Nombre maximum d'articles à afficher (par défaut, -1 signifie tous les articles)
         ), $atts);
 
         // Récupérez les catégories et les catégories en négatif
@@ -39,9 +43,9 @@
         <div class="mon-carrousel">
             <div class="carousel-content">
                 <?php
-                // Utilisez les catégories dans la requête WP_Query
+                // Utilisez l'attribut max_posts dans la requête WP_Query pour limiter le nombre d'articles
                 $args = array(
-                    'posts_per_page' => 5, // Nombre d'articles à afficher
+                    'posts_per_page' => $atts['max_posts'], // Nombre d'articles à afficher
                     'category_name' => $categories,
                     'category__not_in' => array_map('get_cat_ID', explode(',', $exclude_categories)),
                 );
@@ -63,8 +67,8 @@
             </div>
             <div class="carousel-navigation">
                 <button class="prev-button"><</button>
-                <span class="article-counter">1/10</span>
-                <button class="next-button">></button>
+                        <span class="article-counter">1/10</span>
+                        <button class="next-button">></button>
             </div>
         </div>
 
@@ -75,7 +79,8 @@
         return ob_get_clean();
     }
 
-    private function parseCategoriesWithOperator($categories, $operator) {
+    private function parseCategoriesWithOperator($categories, $operator)
+    {
         // Divisez les catégories par des virgules
         $categories_array = explode(',', $categories);
 
