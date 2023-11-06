@@ -22,10 +22,12 @@
   top: 0;
   left: 0;
   opacity: 0;
+  z-index: 1;
   transition: opacity 0.5s;
 }
 
 .carousel-item:first-child {
+  z-index: 10;
   opacity: 1;
 }
 
@@ -41,8 +43,7 @@
 .prev-button,
 .next-button {
   /* Styles pour les boutons de navigation */
-  background-color: #0073e6;
-  color: #fff;
+  background-color: #fff;
   padding: 5px 10px;
   border: none;
   cursor: pointer;
@@ -52,4 +53,30 @@
   /* Styles pour le compteur d'articles */
   margin: 0 10px; /* Ajustez la valeur pour l'espacement entre le compteur et les boutons */
   font-weight: bold;
+}
+
+/* Styles CSS pour la page d'options du plugin */
+.wrap {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.button-primary {
+  background-color: #0073e6;
+  color: #fff;
+}
+
+/* Styles pour le thème clair */
+.mon-carrousel.light {
+  background-color: #fff;
+  color: #333;
+}
+
+/* Styles pour le thème sombre */
+.mon-carrousel.dark {
+  background-color: #333;
+  color: #fff;
 }/*# sourceMappingURL=style.css.map */
