@@ -3,8 +3,6 @@
 .mon-carrousel {
   /* Ajoutez ici les styles pour le conteneur du carrousel */
   width: 100%;
-  overflow: hidden;
-  position: relative;
 }
 
 .carousel-content {
@@ -16,19 +14,17 @@
 .carousel-item {
   /* Ajoutez ici les styles pour chaque élément du carrousel */
   flex: 0 0 100%;
-  padding: 20px;
+  padding: 0px;
   box-sizing: border-box;
   position: absolute;
   top: 0;
   left: 0;
+  margin:  0 auto;
   opacity: 0;
+  right: 0; 
   z-index: 1;
   transition: opacity 0.5s;
-}
-
-.carousel-item:first-child {
-  z-index: 10;
-  opacity: 1;
+  width: fit-content;   
 }
 
 .carousel-navigation {
@@ -43,7 +39,7 @@
 .prev-button,
 .next-button {
   /* Styles pour les boutons de navigation */
-  background-color: #fff;
+  background-color:transparent;
   padding: 5px 10px;
   border: none;
   cursor: pointer;
@@ -71,7 +67,7 @@
 
 /* Styles pour le thème clair */
 .mon-carrousel.light {
-  background-color: #fff;
+  background-color: hsl(29, 100%, 65%);
   color: #333;
 }
 
