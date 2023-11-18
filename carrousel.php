@@ -102,7 +102,7 @@ class MonCarrouselPlugin
                         <div class="carousel-item categorie__article">
                             <div class="image_titre_carrousel">
                                 <?php if (has_post_thumbnail()) : ?>
-                                    <a class="thimbnail_carrousel" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                                    <a class="thumbnail_carrousel" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
                                         <?php the_post_thumbnail('thumbnail'); ?>
                                     </a>
                                 <?php endif; ?>
@@ -118,13 +118,18 @@ class MonCarrouselPlugin
                     <?php if (is_front_page()) { ?>
                         <div class="carousel-item categorie__article">
                             <div class="image_titre_carrousel">
-                                <?php if (has_post_thumbnail()) : ?>
-                                    <a class="thimbnail_carrousel" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                                <div class="contenant__image">
+                                    <?php if (has_post_thumbnail()) : ?>
+                                    <a class="thumbnail_carrousel" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
                                         <?php the_post_thumbnail('thumbnail'); ?>
                                     </a>
                                 <?php endif; ?>
+                                </div>
+                                <div class="contenant__titre"> 
+                                    <h3><a href="<?php the_permalink(); ?>"> <?= $titre ?></a></h3>
+                                </div>
                                 <!--  Afficher le titre l'article (clicable) -->
-                                <h3><a href="<?php the_permalink(); ?>"> <?= $titre ?></a></h3>
+                                
                             </div>
 
                             <div class="content">
