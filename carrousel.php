@@ -137,9 +137,9 @@ class MonCarrouselPlugin
                                     <!--  Un div qui inclus les informations de l'évènement -->
                                     <?php
                                     $lien = get_permalink();
-                                    $lire = "<span><a href='" . $lien . "'>... &#187;</a></span>" ?>
+                                    $lire = "<span><a href='" . $lien . "'>...</a></span>" ?>
                                     <!-- Afficher un extrait de l'article -->
-                                    <p> <?= wp_trim_words(get_the_excerpt(), 30, $lire) ?> </p>
+                                    <p> <?= wp_trim_words(get_the_excerpt(), 18, $lire) ?> </p>
 
                                     <h5>Information (et inscription)</h5>
                                     <!-- Afficher les informations des champs AFC -->
