@@ -100,9 +100,9 @@ class MonCarrouselPlugin
                     ----------------------------------------------------------------------------------->
                     <?php if (!is_front_page()) { ?>
                         <div class="carousel-item categorie__article">
-                            <div class="image_titre_carrousel">
+                            <div class="image_titre_date">
                                 <?php if (has_post_thumbnail()) : ?>
-                                    <a class="thumbnail_carrousel" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                                    <a class="thumbnail" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
                                         <?php the_post_thumbnail('thumbnail'); ?>
                                     </a>
                                 <?php endif; ?>
@@ -117,7 +117,7 @@ class MonCarrouselPlugin
                     ----------------------------------------------------------------------------------->
                     <?php if (is_front_page()) { ?>
                         <div class="carousel-item categorie__article">
-                            <div class="image_titre_carrousel">
+                            <div class="image_titre_date">
                                 <div class="contenant__image">
                                     <?php if (has_post_thumbnail()) : ?>
                                     <a class="thumbnail_carrousel" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
