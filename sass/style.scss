@@ -10,7 +10,6 @@
   .carousel-content {
   /* Ajoutez ici les styles pour le contenu du carrousel */
     position: relative;
-    height: 100%;
 
     .carousel-item {
       box-sizing: border-box;
@@ -37,6 +36,8 @@
   align-items: center;
   justify-content: center;
   height: 5vh;
+  z-index: 10;
+  margin-top: auto;
   
 
     .prev-button,
@@ -73,15 +74,4 @@
   color: #fff;
 }
 
-/* Styles pour le thème clair */
-.mon-carrousel.light {
-  background-color: transparent;
-  color: #333;
-}
-
-/* Styles pour le thème sombre */
-.mon-carrousel.dark {
-  background-color: #333;
-  color: #fff;
-}
 

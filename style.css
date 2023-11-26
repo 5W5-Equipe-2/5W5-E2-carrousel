@@ -10,7 +10,6 @@
 .mon-carrousel .carousel-content {
   /* Ajoutez ici les styles pour le contenu du carrousel */
   position: relative;
-  height: 100%;
 }
 .mon-carrousel .carousel-content .carousel-item {
   box-sizing: border-box;
@@ -36,6 +35,8 @@
   align-items: center;
   justify-content: center;
   height: 5vh;
+  z-index: 10;
+  margin-top: auto;
 }
 .mon-carrousel .carousel-navigation .prev-button,
 .mon-carrousel .carousel-navigation .next-button {
@@ -63,17 +64,5 @@
 
 .button-primary {
   background-color: #0073e6;
-  color: #fff;
-}
-
-/* Styles pour le thème clair */
-.mon-carrousel.light {
-  background-color: transparent;
-  color: #333;
-}
-
-/* Styles pour le thème sombre */
-.mon-carrousel.dark {
-  background-color: #333;
   color: #fff;
 }/*# sourceMappingURL=style.css.map */

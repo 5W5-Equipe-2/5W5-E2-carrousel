@@ -9,41 +9,8 @@
   */
 
   function mon_carrousel_settings_page() {
-    add_menu_page('Carrousel Settings', 'Carrousel Settings', 'manage_options', 'mon-carrousel-settings', 'mon_carrousel_settings_page_content');
+    add_menu_page('Carrousel Settings', 'Carrousel Settings', 'manage_options', 'mon-carrousel-settings');
 }
-
-function mon_carrousel_settings_page_content() {
-    // Vérifiez les autorisations de l'utilisateur
-    if (!current_user_can('manage_options')) {
-        return;
-    }
-
-    // Enregistrez les paramètres si le formulaire est soumis
-    if (isset($_POST['mon_carrousel_submit'])) {
-        update_option('mon_carrousel_theme', $_POST['mon_carrousel_theme']);
-        echo '<div class="updated"><p>Thème mis à jour.</p></div>';
-    }
-
-    // Affichez le formulaire de configuration du thème clair/sombre
-    $carrousel_theme = get_option('mon_carrousel_theme', 'light');
-    ?>
-    <div class="wrap">
-        <h2>Carrousel Settings</h2>
-        <form method="post" action="">
-            <label for="mon_carrousel_theme">Choisissez le thème :</label>
-            <select name="mon_carrousel_theme" id="mon_carrousel_theme">
-                <option value="light" <?php selected($carrousel_theme, 'light'); ?>>Clair</option>
-                <option value="dark" <?php selected($carrousel_theme, 'dark'); ?>>Sombre</option>
-            </select>
-            <p>Sélectionnez le thème du carrousel (clair ou sombre).</p>
-            <input type="submit" name="mon_carrousel_submit" class="button-primary" value="Enregistrer">
-        </form>
-    </div>
-    <?php
-}
-
-add_action('admin_menu', 'mon_carrousel_settings_page');
-
 
 class MonCarrouselPlugin
 {
@@ -101,15 +68,23 @@ class MonCarrouselPlugin
                     <?php if (!is_front_page()) { ?>
                         <div class="carousel-item categorie__article">
                             <div class="image_titre_date">
-                                <?php if (has_post_thumbnail()) : ?>
-                                    <a class="thumbnail" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                            <div class="contenant__image">
+                                    <?php if (has_post_thumbnail()) : ?>
+                                    <a class="thumbnail_carrousel" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
                                         <?php the_post_thumbnail('thumbnail'); ?>
                                     </a>
                                 <?php endif; ?>
+                                </div>
+                                <div class="contenant__titre">
                                 <!--  Afficher le titre l'article (clicable) -->
                                 <h3><a href="<?php the_permalink(); ?>"> <?= $titre ?></a></h3>
+                                </div>
                             </div>
-                            <div class="content"><?php the_content(); ?></div>
+                            <div class="content">
+                            <div class="contenant_contenu">    
+                            <?php the_content(); ?>
+                            </div>
+                        </div>
                         </div>
                     <?php } ?>
                     <!-------------------------------------------------------------------------------- 
