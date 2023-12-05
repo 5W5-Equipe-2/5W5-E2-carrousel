@@ -5,13 +5,12 @@
   height: inherit;
   display: flex;
   flex-direction: column;
-  
-  
-  .carousel-content {
-  /* Ajoutez ici les styles pour le contenu du carrousel */
+
+  .carrousel-content {
+    /* Ajoutez ici les styles pour le contenu du carrousel */
     position: relative;
 
-    .carousel-item {
+    .carrousel-item {
       box-sizing: border-box;
       /* Ajoutez ici les styles pour chaque élément du carrousel */
       flex: 0 0 100%; // Afficher un élément à la fois, 100% de largeur
@@ -22,43 +21,52 @@
       opacity: 1;
       z-index: 1;
       transition: opacity 0.5s;
-      margin:  0 auto; // centrer les logo
+      margin: 0 auto; // centrer les logo
     }
-    .carousel-item:first-child {
+    .carrousel-item:first-child {
       z-index: 10;
       opacity: 1; // Rendre le premier élément visible par défaut
     }
   }
-  .carousel-navigation {
-  /* Ajoutez ici les styles pour la navigation du carrousel */
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 5vh;
-  z-index: 10;
-  margin-top: auto;
-  
+  .carrousel-navigation {
+    /* Ajoutez ici les styles pour la navigation du carrousel */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5vh;
+    z-index: 10;
+    margin-top: auto;
 
     .prev-button,
     .next-button {
-    /* Styles pour les boutons de navigation */
-    background-color: transparent;
-    padding: 5px 10px;
-    border: none;
-    cursor: pointer;
+      /* Styles pour les boutons de navigation */
+      background-color: transparent;
+      padding: 0;
+      border: none;
+      cursor: pointer;
+      
+      svg{
+        color: #fff;
+        g{
+          color: #fff;
+          path{
+            color: #fff;
+          }
+          polygon{
+            color: #fff;
+          }
+        }
+      }
     }
   }
 }
-
-
-
-
 
 .article-counter {
   /* Styles pour le compteur d'articles */
   margin: 0 10px; /* Ajustez la valeur pour l'espacement entre le compteur et les boutons */
   font-weight: bold;
+  font-family: "DM Sans", sans-serif;
 }
 /* Styles CSS pour la page d'options du plugin */
 .wrap {
@@ -73,5 +81,3 @@
   background-color: #0073e6;
   color: #fff;
 }
-
-
