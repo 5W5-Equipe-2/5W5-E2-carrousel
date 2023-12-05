@@ -5,9 +5,10 @@
   height: inherit;
   display: flex;
   flex-direction: column;
-
+  
+  
   .carrousel-content {
-    /* Ajoutez ici les styles pour le contenu du carrousel */
+  /* Ajoutez ici les styles pour le contenu du carrousel */
     position: relative;
 
     .carrousel-item {
@@ -29,14 +30,15 @@
     }
   }
   .carrousel-navigation {
-    /* Ajoutez ici les styles pour la navigation du carrousel */
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 5vh;
-    z-index: 10;
-    margin-top: auto;
+  /* Ajoutez ici les styles pour la navigation du carrousel */
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5vh;
+  z-index: 10;
+  margin-top: auto;
+  
 
     .prev-button,
     .next-button {
