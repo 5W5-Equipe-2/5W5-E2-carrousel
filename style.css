@@ -46,21 +46,13 @@
   border: none;
   cursor: pointer;
 }
-.mon-carrousel .carrousel-navigation .prev-button svg,
-.mon-carrousel .carrousel-navigation .next-button svg {
-  color: #fff;
-}
-.mon-carrousel .carrousel-navigation .prev-button svg g,
-.mon-carrousel .carrousel-navigation .next-button svg g {
-  color: #fff;
-}
 .mon-carrousel .carrousel-navigation .prev-button svg g path,
 .mon-carrousel .carrousel-navigation .next-button svg g path {
-  color: #fff;
+  fill: hsl(236, 18%, 19%);
 }
 .mon-carrousel .carrousel-navigation .prev-button svg g polygon,
 .mon-carrousel .carrousel-navigation .next-button svg g polygon {
-  color: #fff;
+  fill: hsl(236, 18%, 19%);
 }
 
 .article-counter {

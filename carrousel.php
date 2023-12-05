@@ -77,7 +77,7 @@ class MonCarrouselPlugin
                                 <div class="contenant__image">
                                     <?php if (has_post_thumbnail()) : ?>
                                         <a class="thumbnail_carrousel" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-                                            <?php the_post_thumbnail('thumbnail'); ?>
+                                            <?php the_post_thumbnail('thumbnail', 'large'); ?>
                                         </a>
                                     <?php endif; ?>
                                 </div>
@@ -103,7 +103,7 @@ class MonCarrouselPlugin
                                 <div class="contenant__image">
                                     <?php if (has_post_thumbnail()) : ?>
                                         <a class="thumbnail_carrousel" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-                                            <?php the_post_thumbnail('thumbnail'); ?>
+                                            <?php the_post_thumbnail('thumbnail', 'large'); ?>
                                         </a>
                                     <?php endif; ?>
                                 </div>

@@ -47,16 +47,14 @@
       padding: 0;
       border: none;
       cursor: pointer;
-      
       svg{
-        color: #fff;
         g{
-          color: #fff;
           path{
-            color: #fff;
+            fill: hsl(236, 18%, 19%);
+            
           }
           polygon{
-            color: #fff;
+            fill: hsl(236, 18%, 19%);
           }
         }
       }
