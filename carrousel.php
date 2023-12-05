@@ -82,7 +82,7 @@ class MonCarrouselPlugin
         ob_start();
     ?>
         <div class="mon-carrousel <?php echo esc_attr($carrousel_theme); ?>">
-            <div class="carousel-content">
+            <div class="carrousel-content">
                 <?php
                 // Utilisez l'attribut max_posts dans la requête WP_Query pour limiter le nombre d'articles
                 $args = array(
@@ -99,7 +99,7 @@ class MonCarrouselPlugin
                     Si c'est une autre page
                     ----------------------------------------------------------------------------------->
                     <?php if (!is_front_page()) { ?>
-                        <div class="carousel-item categorie__article">
+                        <div class="carrousel-item categorie__article">
                             <div class="image_titre_date">
                                 <?php if (has_post_thumbnail()) : ?>
                                     <a class="thumbnail" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
@@ -116,7 +116,7 @@ class MonCarrouselPlugin
                     Si c'est la page d'accueil seulement
                     ----------------------------------------------------------------------------------->
                     <?php if (is_front_page()) { ?>
-                        <div class="carousel-item categorie__article">
+                        <div class="carrousel-item categorie__article">
                             <div class="image_titre_date">
                                 <div class="contenant__image">
                                     <?php if (has_post_thumbnail()) : ?>
@@ -178,7 +178,7 @@ class MonCarrouselPlugin
                 wp_reset_postdata();
                 ?>
             </div>
-            <div class="carousel-navigation">
+            <div class="carrousel-navigation">
                 <button class="prev-button"><?php echo '<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42"><g fill="#ebf6f6" stroke="#707070" stroke-width="1"><circle cx="21" cy="21" r="21" stroke="none"/><circle cx="21" cy="21" r="20.5" fill="none"/></g><path d="M1.764,0H16.657a0,0,0,0,1,0,0V3.528a0,0,0,0,1,0,0H1.764A1.764,1.764,0,0,1,0,1.764v0A1.764,1.764,0,0,1,1.764,0Z" transform="translate(28.136 11.716) rotate(135)" fill="#707070"/><path d="M1.764,0H16.657a0,0,0,0,1,0,0V3.528a0,0,0,0,1,0,0H1.764A1.764,1.764,0,0,1,0,1.764v0A1.764,1.764,0,0,1,1.764,0Z" transform="translate(25.642 32.778) rotate(-135)" fill="#707070"/></svg>' ?></button>
                 <span class="article-counter">1/10</span>
                 <button class="next-button"><?php echo '<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42"><g fill="#ebf6f6" stroke="#707070" stroke-width="1"><circle cx="21" cy="21" r="21" stroke="none"/><circle cx="21" cy="21" r="20.5" fill="none"/></g><path d="M1.764,0H16.657a0,0,0,0,1,0,0V3.528a0,0,0,0,1,0,0H1.764A1.764,1.764,0,0,1,0,1.764v0A1.764,1.764,0,0,1,1.764,0Z" transform="translate(16.358 9.222) rotate(45)" fill="#707070"/><path d="M1.764,0H16.657a0,0,0,0,1,0,0V3.528a0,0,0,0,1,0,0H1.764A1.764,1.764,0,0,1,0,1.764v0A1.764,1.764,0,0,1,1.764,0Z" transform="translate(13.864 30.284) rotate(-45)" fill="#707070"/></svg>' ?></button>

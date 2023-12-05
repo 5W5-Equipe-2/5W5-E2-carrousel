@@ -1,16 +1,16 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const carouselContent = document.querySelector('.carousel-content');
-    const carouselItems = document.querySelectorAll('.carousel-item');
+    const carrouselContent = document.querySelector('.carrousel-content');
+    const carrouselItems = document.querySelectorAll('.carrousel-item');
     let currentItem = 0;
 
     function showItem(index) {
         // Masquez l'élément actuel avec un effet de fondu
-        carouselItems[currentItem].style.opacity = 0;
-        carouselItems[currentItem].style.zIndex = 1;
+        carrouselItems[currentItem].style.opacity = 0;
+        carrouselItems[currentItem].style.zIndex = 1;
 
         // Affichez l'élément cible avec un effet de fondu
-        carouselItems[index].style.opacity = 1;
-        carouselItems[index].style.zIndex = 10;
+        carrouselItems[index].style.opacity = 1;
+        carrouselItems[index].style.zIndex = 10;
 
         currentItem = index;
         updateCounter(); // Mettez à jour le compteur d'articles
@@ -18,20 +18,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateCounter() {
         const counter = document.querySelector('.article-counter');
-        const totalItems = carouselItems.length;
+        const totalItems = carrouselItems.length;
         const currentNumber = currentItem + 1;
         counter.textContent = `${currentNumber}/${totalItems}`;
     }
 
     // Fonction pour afficher l'élément précédent
     function showPreviousItem() {
-        let index = (currentItem - 1 + carouselItems.length) % carouselItems.length;
+        let index = (currentItem - 1 + carrouselItems.length) % carrouselItems.length;
         showItem(index);
     }
 
     // Fonction pour afficher l'élément suivant
     function showNextItem() {
-        let index = (currentItem + 1) % carouselItems.length;
+        let index = (currentItem + 1) % carrouselItems.length;
         showItem(index);
     }
 
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
     nextButton.addEventListener('click', showNextItem);
 
     // Démarrez le carrousel en ajoutant la classe 'active' au premier élément
-    carouselItems[currentItem].style.opacity = 1;
-    carouselItems[currentItem].style.zIndex = 10;
+    carrouselItems[currentItem].style.opacity = 1;
+    carrouselItems[currentItem].style.zIndex = 10;
     updateCounter(); // Mettez à jour le compteur d'articles initial
 });
