@@ -76,7 +76,7 @@ class MonCarrouselPlugin
                                 <!--- Contenant de l'image --->
                                 <div class="contenant__image">
                                     <?php if (has_post_thumbnail()) : ?>
-                                        <a class="thumbnail_carrousel" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                                        <a class="thumbnail_carrousel" title="<?php the_title_attribute(); ?>">
                                             <?php the_post_thumbnail('thumbnail', 'full'); ?>
                                         </a>
                                     <?php endif; ?>
@@ -173,26 +173,17 @@ class MonCarrouselPlugin
                 wp_reset_postdata();
                 ?>
             </div>
+            <?php
+            //Boutons de navigation du carrousel//
+            ?>
             <div class="carrousel-navigation">
-                <button class="prev-button"><?php echo '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24">
-  <g>
-    <path d="M12,2A10,10,0,1,0,22,12,10.011,10.011,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8.009,8.009,0,0,1,12,20Z"/>
-    <polygon points="12.707 8.707 11.293 7.293 6.586 12 11.293 16.707 12.707 15.293 10.414 13 16 13 16 11 10.414 11 12.707 8.707"/>
-  </g>
-</svg>
-' ?></button>
+                <button class="prev-button"><?php echo '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"><g><path d="M12,2A10,10,0,1,0,22,12,10.011,10.011,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8.009,8.009,0,0,1,12,20Z"/><polygon points="12.707 8.707 11.293 7.293 6.586 12 11.293 16.707 12.707 15.293 10.414 13 16 13 16 11 10.414 11 12.707 8.707"/></g></svg>' ?></button>
                 <span class="article-counter">1/10</span>
-                <button class="next-button"><?php echo '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24">
-  <g>
-    <path d="M12,2A10,10,0,1,0,22,12,10.011,10.011,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8.009,8.009,0,0,1,12,20Z"/>
-    <polygon points="11.293 8.707 13.586 11 8 11 8 13 13.586 13 11.293 15.293 12.707 16.707 17.414 12 12.707 7.293 11.293 8.707"/>
-  </g>
-</svg>
-' ?></button>
+                <button class="next-button"><?php echo '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"><g><path d="M12,2A10,10,0,1,0,22,12,10.011,10.011,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8.009,8.009,0,0,1,12,20Z"/><polygon points="11.293 8.707 13.586 11 8 11 8 13 13.586 13 11.293 15.293 12.707 16.707 17.414 12 12.707 7.293 11.293 8.707"/></g></svg>' ?></button>
             </div>
         </div>
 
-<?php
+        <?php
         // Enqueue JavaScript et CSS
         wp_enqueue_script('carrousel-js', plugins_url('js/carrousel.js', __FILE__), array('jquery'), '1.0', true);
         wp_enqueue_style('carrousel-css', plugins_url('style.css', __FILE__));
