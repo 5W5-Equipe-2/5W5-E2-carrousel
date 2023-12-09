@@ -83,7 +83,7 @@ class MonCarrouselPlugin
                                 </div>
                                 <!--  Afficher le titre l'article (clicable) -->
                                 <div class="contenant__titre">
-                                    <h3><a href="<?php the_permalink(); ?>"> <?= $titre ?></a></h3>
+                                    <h3><?= $titre ?></h3>
                                 </div>
                             </div>
                             <!--- Contenu --->
