@@ -76,8 +76,11 @@ class MonCarrouselPlugin
                                 <!--- Contenant de l'image --->
                                 <div class="contenant__image">
                                     <?php if (has_post_thumbnail()) : ?>
-                                        <a class="thumbnail_carrousel" title="<?php the_title_attribute(); ?>">
-                                            <?php the_post_thumbnail('thumbnail', 'full'); ?>
+                                        <a class="thimbnail_carrousel" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                                            <?php
+                                            $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'large');
+                                            echo '<img src="' . esc_url($thumbnail_url) . '" alt="' . esc_attr(get_the_title()) . '">';
+                                            ?>
                                         </a>
                                     <?php endif; ?>
                                 </div>
@@ -102,8 +105,11 @@ class MonCarrouselPlugin
                             <div class="image_titre_date">
                                 <div class="contenant__image">
                                     <?php if (has_post_thumbnail()) : ?>
-                                        <a class="thumbnail_carrousel" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-                                            <?php the_post_thumbnail('thumbnail', 'full'); ?>
+                                        <a class="thimbnail_carrousel" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                                            <?php
+                                            $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'large');
+                                            echo '<img src="' . esc_url($thumbnail_url) . '" alt="' . esc_attr(get_the_title()) . '">';
+                                            ?>
                                         </a>
                                     <?php endif; ?>
                                 </div>
@@ -183,7 +189,7 @@ class MonCarrouselPlugin
             </div>
         </div>
 
-        <?php
+<?php
         // Enqueue JavaScript et CSS
         wp_enqueue_script('carrousel-js', plugins_url('js/carrousel.js', __FILE__), array('jquery'), '1.0', true);
         wp_enqueue_style('carrousel-css', plugins_url('style.css', __FILE__));
