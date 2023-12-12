@@ -4,12 +4,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function showItem(index) {
     // Masquez l'élément actuel avec un effet de fondu
-    carrouselItems[currentItem].style.opacity = 0;
-    carrouselItems[currentItem].style.zIndex = 1;
+    carrouselItems[currentItem].classList.remove("carrousel-ouvert");
 
     // Affichez l'élément cible avec un effet de fondu
-    carrouselItems[index].style.opacity = 1;
-    carrouselItems[index].style.zIndex = 10;
+    carrouselItems[index].classList.add("carrousel-ouvert");
 
     currentItem = index;
     updateCounter(); // Mettez à jour le compteur d'articles
@@ -43,8 +41,5 @@ document.addEventListener("DOMContentLoaded", function () {
   const nextButton = document.querySelector(".next-button");
   nextButton.addEventListener("click", showNextItem);
 
-  // Démarrez le carrousel en ajoutant la classe 'active' au premier élément
-  carrouselItems[currentItem].style.opacity = 1;
-  carrouselItems[currentItem].style.zIndex = 10;
   updateCounter(); // Mettez à jour le compteur d'articles initial
 });

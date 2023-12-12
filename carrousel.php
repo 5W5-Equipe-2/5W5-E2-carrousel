@@ -62,15 +62,16 @@ class MonCarrouselPlugin
                     'category__not_in' => array_map('get_cat_ID', explode(',', $exclude_categories)),
                 );
                 $query = new WP_Query($args);
-
+                $count = 0;
                 while ($query->have_posts()) : $query->the_post();
                     $titre = get_the_title();
+                    $count++;
                 ?>
                     <!-------------------------------------------------------------------------------- 
                     La structure si c'est une page Autre que front page
                     ----------------------------------------------------------------------------------->
                     <?php if (!is_front_page()) { ?>
-                        <div class="carrousel-item categorie__article">
+                        <div class="carrousel-item categorie__article <?php echo ($count == 1) ? 'carrousel-ouvert' : ''; ?>">
                             <!--- Bloque de Guauche avec image et titre --->
                             <div class="image_titre_date">
                                 <!--- Contenant de l'image --->

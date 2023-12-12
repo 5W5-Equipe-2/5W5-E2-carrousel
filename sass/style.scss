@@ -19,14 +19,16 @@
       top: 0;
       left: 0;
       right: 0;
-      opacity: 1;
+      opacity: 0;
       z-index: 1;
-      transition: opacity 0.5s;
-      margin: 0 auto; // centrer les logo
+      margin: 0 auto; // centrer les logos
+      transition: opacity 200ms ease-in-out; /* Ajustement de la transition */
+      transition-delay: 200ms;
     }
-    .carrousel-item:first-child {
-      z-index: 10;
-      opacity: 1; // Rendre le premier élément visible par défaut
+    .carrousel-item.carrousel-ouvert {
+      z-index: 10 !important;
+      opacity: 1 !important; // Rendre le premier élément visible par défaut
+      transition-delay: 0ms;
     }
   }
   .carrousel-navigation {
