@@ -102,7 +102,7 @@ class MonCarrouselPlugin
                     Si c'est la page d'accueil seulement
                     ----------------------------------------------------------------------------------->
                     <?php if (is_front_page()) { ?>
-                        <div class="carrousel-item categorie__article">
+                        <div class="carrousel-item categorie__article <?php echo ($count == 1) ? 'carrousel-ouvert' : ''; ?>">
                             <div class="image_titre_date">
                                 <div class="contenant__image">
                                     <?php if (has_post_thumbnail()) : ?>
