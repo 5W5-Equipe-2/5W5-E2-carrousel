@@ -77,7 +77,7 @@ class MonCarrouselPlugin
                                 <!--- Contenant de l'image --->
                                 <div class="contenant__image">
                                     <?php if (has_post_thumbnail()) : ?>
-                                        <a class="thimbnail_carrousel" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                                        <a class="thimbnail_carrousel" title="<?php the_title_attribute(); ?>">
                                             <?php
                                             $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'large');
                                             echo '<img src="' . esc_url($thumbnail_url) . '" alt="' . esc_attr(get_the_title()) . '">';
